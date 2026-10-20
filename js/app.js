@@ -826,7 +826,7 @@
         if (window.Game) Game.ultimate(state.s3Index, state.s3Questions.length);
       }
       fb.classList.add("is-correct");
-      fbHeader.textContent = "🏆 100点満点！ テスト本番でもそのまま丸がもらえる素晴らしい記述です！";
+      fbHeader.textContent = "🏆 100点満点！ テストでも自信をもって書ける素晴らしい記述です！";
       addAdviceItem(
         adviceList,
         `✅ 必須キーワード（${q.keywords.map((k) => k.label).join("・")}）がすべて正しく使えています！`
