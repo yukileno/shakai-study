@@ -1,0 +1,20 @@
+# 原本画像・教材・個人情報ファイルのGitコミット厳禁
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*テスト*
+*原本*
+社会５年上/
+社会５下/
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+
+# 生成したゲーム画像（Flow製・教材原本ではない）は公開する
+!css/img/
+!css/img/*.jpg
+
+# エージェント設定は公開しない
+.agents/

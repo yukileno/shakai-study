@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>社会科 定着＆記述マスター</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <canvas id="fx-canvas"></canvas>
+  <!-- ヘッダー -->
+  <header class="app-header">
+    <div class="header-inner">
+      <button id="btn-home" class="logo-btn" title="トップ画面にもどる">
+        <span class="logo-icon">🌏</span>
+        <div class="logo-text-wrap">
+          <span class="logo-sub">社会科・記述詠唱バトルRPG</span>
+          <span class="logo-main">言霊モンスターズ</span>
+        </div>
+      </button>
+      <div class="header-stats">
+        <button id="btn-gacha" class="game-chip" type="button" title="ガチャを回す">🎰 🎫<span id="chip-tickets">0</span> 🪙<span id="chip-coins">0</span></button>
+        <button id="btn-zukan" class="game-chip" type="button" title="図鑑を見る">📚 <span id="chip-zukan">1/10</span></button>
+        <div class="stat-pill" title="獲得したクリア王冠の数">
+          <span>👑</span>
+          <span id="total-crowns">0</span>
+          <span class="stat-label">クリア</span>
+        </div>
+        <button id="btn-reset-progress" class="btn-ghost-sm" title="学習記録をリセット">
+          記録リセット
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- ==========================================
+         ホーム画面（単元選択 ＆ 3ステップ進捗）
+    =========================================== -->
+    <section id="view-home" class="view active">
+      <div class="hero-banner">
+        <img id="hero-partner" class="hero-partner" src="css/img/m01.jpg" alt="相棒モンスター">
+        <div class="hero-text">
+          <div class="hero-title-game">⚔️ 言霊モンスターズ ⚔️</div>
+          <h1>クイズで斬る！ パズルで雷撃！ 言霊で必殺技！</h1>
+          <p>
+            <strong>WAVE 1（4択）</strong>で敵を倒し、<strong>WAVE 2（並び替え）</strong>でボスのバリアを破壊、<strong>WAVE 3（1行記述・声で詠唱）</strong>で超必殺技！ ガチャで仲間を集めよう。
+          </p>
+        </div>
+      </div>
+
+      <div id="units-container" class="units-container">
+        <!-- JSで単元カードを動的生成 -->
+      </div>
+    </section>
+
+    <!-- ==========================================
+         学習ステップ共通ナビゲーションバー
+    =========================================== -->
+    <div id="study-nav" class="study-nav hidden">
+      <button id="btn-back-unit" class="btn-back">
+        ← 単元トップへもどる
+      </button>
+      <div class="step-switcher">
+        <button id="tab-step1" class="step-tab" data-step="1">
+          <span class="step-num">Step 1</span>
+          <span class="step-name">4択クイズ</span>
+        </button>
+        <span class="step-arrow">▶</span>
+        <button id="tab-step2" class="step-tab" data-step="2">
+          <span class="step-num">Step 2</span>
+          <span class="step-name">並び替えパズル</span>
+        </button>
+        <span class="step-arrow">▶</span>
+        <button id="tab-step3" class="step-tab" data-step="3">
+          <span class="step-num">Step 3</span>
+          <span class="step-name">1行記述</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- バトルステージ（学習画面で表示） -->
+    <div id="battle-stage" class="battle-stage hidden">
+      <div class="bs-bg"></div>
+      <div class="bs-hud">
+        <span id="bs-wave" class="bs-wave">WAVE 1</span>
+        <span id="bs-combo" class="bs-combo"></span>
+        <button id="btn-mute" class="bs-mute" type="button" title="効果音">🔊</button>
+      </div>
+      <div class="bs-field">
+        <div class="bs-unit">
+          <div id="bs-partner-frame" class="bs-frame"><img id="bs-partner" src="css/img/m01.jpg" alt="相棒"></div>
+          <div id="bs-partner-name" class="bs-name"></div>
+          <div class="hp"><i id="bs-partner-hp"></i></div>
+        </div>
+        <div class="bs-unit">
+          <div id="bs-enemy" class="enemy-art"></div>
+          <div id="bs-enemy-name" class="bs-name"></div>
+          <div class="hp enemy"><i id="bs-enemy-hp"></i></div>
+        </div>
+      </div>
+      <div class="bs-charge-row">
+        <span id="bs-charge-label">詠唱 0%</span>
+        <div class="bs-charge-bar"><span id="bs-charge" class="bs-charge"></span></div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         Step 1: じっくり4択クイズ画面
+    =========================================== -->
+    <section id="view-step1" class="view">
+      <div class="card study-card">
+        <div class="progress-header">
+          <div class="badge-group">
+            <span class="step-badge step1-color">Step 1：じっくり4択クイズ</span>
+            <span id="s1-q-type" class="type-badge">知識・技能</span>
+            <span id="s1-q-page" class="page-badge">p.10</span>
+          </div>
+          <div id="s1-progress-text" class="progress-count">第 1 / 10 問</div>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="s1-progress-bar" class="progress-bar-fill step1-fill" style="width: 10%;"></div>
+        </div>
+
+        <h2 id="s1-question" class="question-title">問題文がここに入ります</h2>
+
+        <div id="s1-choices" class="choices-grid">
+          <!-- JSで選択肢ボタンを生成 -->
+        </div>
+
+        <!-- 解説＆重要キーワードフィードバック -->
+        <div id="s1-feedback" class="feedback-box hidden">
+          <div id="s1-feedback-header" class="feedback-header"></div>
+          <div class="keywords-row">
+            <span class="keywords-label">📌 重要キーワード：</span>
+            <div id="s1-keywords" class="keywords-chips"></div>
+          </div>
+          <p id="s1-explanation" class="explanation-text"></p>
+          <div class="feedback-actions">
+            <button id="btn-s1-speak" class="btn-speak" type="button">
+              🔊 解説を読み上げる
+            </button>
+            <button id="btn-s1-next" class="btn-primary btn-lg" type="button">
+              つぎの問題へ ➔
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Step 2: 語句ブロック並び替えパズル画面
+    =========================================== -->
+    <section id="view-step2" class="view">
+      <div class="card study-card">
+        <div class="progress-header">
+          <div class="badge-group">
+            <span class="step-badge step2-color">Step 2：語句ブロック並び替えパズル</span>
+            <span id="s2-q-category" class="type-badge">理由を説明する文</span>
+            <span id="s2-q-page" class="page-badge">p.14</span>
+          </div>
+          <div id="s2-progress-text" class="progress-count">第 1 / 5 問</div>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="s2-progress-bar" class="progress-bar-fill step2-fill" style="width: 20%;"></div>
+        </div>
+
+        <h2 id="s2-question" class="question-title">問題文がここに入ります</h2>
+        <p class="instruction-sub">下の語句ブロックをタップして、正しい順番の文に並びかえよう！（もう一度タップすると戻せます）</p>
+
+        <!-- 回答組み立てエリア -->
+        <div class="puzzle-answer-zone">
+          <div class="zone-header">
+            <span>✍️ あなたが組み立てた文：</span>
+            <div class="zone-controls">
+              <button id="btn-s2-undo" class="btn-ghost-sm" type="button">1つもどす</button>
+              <button id="btn-s2-clear" class="btn-ghost-sm" type="button">やりなおす</button>
+            </div>
+          </div>
+          <div id="s2-answer-slots" class="puzzle-slots empty">
+            <span class="placeholder-msg">下のブロックをタップしてここに並べよう</span>
+          </div>
+        </div>
+
+        <!-- 語句ブロック選択プール -->
+        <div class="puzzle-pool-zone">
+          <div class="zone-label">🧩 語句ブロック：</div>
+          <div id="s2-pool-blocks" class="puzzle-pool"></div>
+        </div>
+
+        <div class="center-actions">
+          <button id="btn-s2-check" class="btn-primary btn-lg" type="button" disabled>
+            答えあわせをする！
+          </button>
+        </div>
+
+        <!-- Step 2 解説ボックス -->
+        <div id="s2-feedback" class="feedback-box hidden">
+          <div id="s2-feedback-header" class="feedback-header"></div>
+          <div class="completed-sentence-box">
+            <span class="completed-label">完成した文：</span>
+            <p id="s2-completed-sentence" class="completed-sentence"></p>
+          </div>
+          <p id="s2-point" class="explanation-text"></p>
+          <div class="feedback-actions">
+            <button id="btn-s2-speak" class="btn-speak" type="button">
+              🔊 完成した文を読み上げる
+            </button>
+            <button id="btn-s2-next" class="btn-primary btn-lg" type="button">
+              つぎのパズルへ ➔
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         Step 3: キーワード指定 1行記述チャレンジ画面
+    =========================================== -->
+    <section id="view-step3" class="view">
+      <div class="card study-card">
+        <div class="progress-header">
+          <div class="badge-group">
+            <span class="step-badge step3-color">Step 3：1行記述チャレンジ（声・文字）</span>
+            <span id="s3-q-page" class="page-badge">p.14</span>
+          </div>
+          <div id="s3-progress-text" class="progress-count">第 1 / 5 問</div>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="s3-progress-bar" class="progress-bar-fill step3-fill" style="width: 20%;"></div>
+        </div>
+
+        <h2 id="s3-question" class="question-title">問題文がここに入ります</h2>
+        <p id="s3-instruction" class="instruction-sub"></p>
+
+        <!-- 必須キーワード＆文末チェックリスト（リアルタイム点灯） -->
+        <div class="keyword-checklist-card">
+          <div class="checklist-title">
+            <span>🔑 使うキーワードと文末チェック（書くと自動で <strong>✅ OK</strong> がつくよ！）</span>
+          </div>
+          <div id="s3-keyword-badges" class="keyword-badges-list">
+            <!-- JSで動的生成 -->
+          </div>
+        </div>
+
+        <!-- 入力エリア（音声入力＆タイピング両対応） -->
+        <div class="descriptive-input-wrap">
+          <div class="voice-bar">
+            <button id="btn-s3-mic" class="btn-mic" type="button">
+              <span class="mic-icon">🎤</span>
+              <span id="mic-btn-label">マイクをおして「声」で説明する</span>
+            </button>
+            <span id="mic-status" class="mic-status">キーボードで直接入力してもOK！漢字・ひらがな、どちらでも採点できます。</span>
+          </div>
+
+          <textarea
+            id="s3-textarea"
+            class="descriptive-textarea"
+            rows="3"
+            placeholder="ここに文を入力するか、上の「🎤マイク」をおして声で説明しよう！（例：〜防いだり、〜よくしたりするため。）"
+          ></textarea>
+
+          <div class="input-bottom-bar">
+            <button id="btn-s3-clear" class="btn-ghost-sm" type="button">文を消す</button>
+            <button id="btn-s3-grade" class="btn-primary btn-lg" type="button">
+              ✨ 記述を採点する！
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3 採点結果＆アドバイスボックス -->
+        <div id="s3-feedback" class="feedback-box hidden">
+          <div id="s3-feedback-header" class="feedback-header"></div>
+          <div id="s3-advice-list" class="advice-list"></div>
+
+          <div class="model-answer-card">
+            <div class="model-answer-header">
+              <span>📘 教科書の模範解答（お手本）：</span>
+              <button id="btn-s3-speak" class="btn-speak-sm" type="button">🔊 お手本を聞く</button>
+            </div>
+            <p id="s3-model-answer" class="model-answer-text"></p>
+            <p id="s3-rubric-note" class="rubric-note-text"></p>
+          </div>
+
+          <div class="feedback-actions">
+            <button id="btn-s3-retry" class="btn-secondary" type="button">
+              ✍️ もう一度書き直して満点をめざす
+            </button>
+            <button id="btn-s3-next" class="btn-primary btn-lg" type="button">
+              つぎの記述問題へ ➔
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         ステップ完了・結果発表画面
+    =========================================== -->
+    <section id="view-result" class="view">
+      <div class="card result-card">
+        <div id="result-icon" class="result-big-icon">🎉</div>
+        <h2 id="result-title" class="result-title">ステップ完了！</h2>
+        <p id="result-score-text" class="result-score-text"></p>
+        <p id="result-message" class="result-message"></p>
+
+        <div id="result-actions" class="result-actions">
+          <!-- JSで「まちがえた問題を解き直す」「次のステップへ進む」ボタン等を生成 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         重要まとめ＆音読カードモーダル
+    =========================================== -->
+    <div id="modal-summary" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="modal-summary-title">📖 テストに出る！重要記述＆キーワードまとめ</h3>
+          <button id="btn-close-modal" class="btn-close-modal" type="button">✕ 閉じる</button>
+        </div>
+        <p class="modal-lead">
+          テストの前に、声に出して読んでみよう！「🔊 読み上げ」をおすと、お手本の文を聞くこともできます。
+        </p>
+        <div id="modal-summary-body" class="modal-body">
+          <!-- JSで生成 -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>小学校社会科 定着＆記述マスター ｜ 学習科学（検索練習・段階的足場はずし・自己説明）に基づく完全無料Webアプリ</p>
+  </footer>
+
+  <!-- ガチャ・図鑑モーダル -->
+  <div id="modal-game" class="modal-overlay hidden">
+    <div class="modal-game-card"><div id="modal-game-body"></div></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
