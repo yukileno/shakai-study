@@ -45,6 +45,21 @@
     return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
   }
 
+  // 横長（左:問題／右:バトル）レイアウトのときは魔法陣をバトル画面の中央に置く
+  function placeMagicCircle() {
+    const fx = global.Fx;
+    if (!fx) return;
+    const stage = $("battle-stage");
+    if (stage && !stage.classList.contains("hidden") && window.matchMedia("(min-width: 1000px)").matches) {
+      const r = stage.getBoundingClientRect();
+      fx.magicCircle.cx = r.left + r.width / 2;
+      fx.magicCircle.cy = r.top + r.height * 0.55;
+      fx.magicCircle.r = Math.min(r.width, r.height) * 0.42;
+    } else {
+      fx.magicCircle.cx = fx.magicCircle.cy = fx.magicCircle.r = null;
+    }
+  }
+
   function setBar(id, pct) {
     const el = $(id);
     if (el) el.style.width = Math.max(0, Math.min(100, pct)) + "%";
@@ -114,7 +129,10 @@
       if (isStudy) BGM.start(Number(viewId.slice(-1)));
       else BGM.stop();
       if (global.Fx && viewId !== "view-step3") global.Fx.setMagicCircle(false, 0);
-      if (viewId === "view-step3" && global.Fx) global.Fx.setMagicCircle(true, 0);
+      if (viewId === "view-step3" && global.Fx) {
+        placeMagicCircle();
+        global.Fx.setMagicCircle(true, 0);
+      }
     },
 
     // ステップ開始（HPリセット）
@@ -219,6 +237,7 @@
 
     // Step3 リアルタイム詠唱パワー（0〜3）
     charge(level) {
+      placeMagicCircle();
       if (global.Fx) global.Fx.setMagicCircle(true, level);
       $("bs-charge").style.width = (level / 3) * 100 + "%";
       $("bs-charge-label").textContent = level >= 3 ? "詠唱 100%！" : `詠唱 ${Math.round((level / 3) * 100)}%`;
@@ -227,7 +246,8 @@
     // Step3 満点：超必殺技
     ultimate(doneIndex, total) {
       const p = enemyCenter();
-      global.Fx.triggerUltimateBeam();
+      const pr = $("bs-partner").getBoundingClientRect();
+      global.Fx.triggerUltimateBeam(pr.left + pr.width / 2, pr.top + pr.height / 2, p.x, p.y);
       global.Fx.spawnFloatingText("9999", p.x, p.y, "#fde047", 2.0, "ULTIMATE!");
       $("bs-enemy").classList.add("hit");
       st.enemyHp = 100 - ((doneIndex + 1) / total) * 100;

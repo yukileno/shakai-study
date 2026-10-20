@@ -226,15 +226,15 @@
     // ==========================================
     // 超必殺技・言霊アルティメットレーザー（Step 3 満点時）
     // ==========================================
-    triggerUltimateBeam() {
+    triggerUltimateBeam(sx, sy, ex, ey) {
       if (!this.canvas) return;
       this.playUltimateSE();
       this.shake(700, 18);
 
-      const startX = this.canvas.width * 0.25;
-      const startY = this.canvas.height * 0.28;
-      const endX = this.canvas.width * 0.75;
-      const endY = this.canvas.height * 0.25;
+      const startX = sx != null ? sx : this.canvas.width * 0.25;
+      const startY = sy != null ? sy : this.canvas.height * 0.28;
+      const endX = ex != null ? ex : this.canvas.width * 0.75;
+      const endY = ey != null ? ey : this.canvas.height * 0.25;
 
       this.beams.push({
         x1: startX,
@@ -259,7 +259,8 @@
       if (active && powerLevel > prevLevel) {
         this.playChargeSE(powerLevel);
         if (this.canvas) {
-          this.burstSparks(this.canvas.width * 0.5, this.canvas.height * 0.58, 22, "#fb923c");
+          const mc = this.magicCircle;
+          this.burstSparks(mc.cx != null ? mc.cx : this.canvas.width * 0.5, mc.cy != null ? mc.cy : this.canvas.height * 0.58, 22, "#fb923c");
         }
       }
     }
@@ -458,9 +459,10 @@
       const lvl = this.magicCircle.powerLevel;
       this.magicCircle.angle += 0.012 + lvl * 0.015;
 
-      const cx = this.canvas.width * 0.5;
-      const cy = this.canvas.height * 0.55;
-      const baseRadius = Math.min(this.canvas.width, this.canvas.height) * 0.28;
+      const mc = this.magicCircle;
+      const cx = mc.cx != null ? mc.cx : this.canvas.width * 0.5;
+      const cy = mc.cy != null ? mc.cy : this.canvas.height * 0.55;
+      const baseRadius = mc.r != null ? mc.r : Math.min(this.canvas.width, this.canvas.height) * 0.28;
 
       const colors = ["#64748b", "#38bdf8", "#facc15", "#f97316"];
       const strokeColor = colors[Math.min(lvl, 3)];
