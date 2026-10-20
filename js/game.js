@@ -7,7 +7,7 @@
 
   const KEY = "kotodama_game_v1";
   const img = (id) => `css/img/${id}.webp`;
-  const RARITY_WEIGHT = { SR: 45, SSR: 35, UR: 15, LEGEND: 5 };
+  const RARITY_WEIGHT = { SR: 65, SSR: 27, UR: 7, LEGEND: 1 };
 
   let sv = load();
   const st = { hp: 100, combo: 0, enemyHp: 100, step: 1, bossName: "", bossIcon: "" };
