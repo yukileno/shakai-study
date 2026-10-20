@@ -714,17 +714,27 @@
         clean.endsWith("ため") ||
         clean.endsWith("から") ||
         clean.endsWith("ので") ||
-        clean.endsWith("ようにするため")
+        clean.endsWith("ようにするため") ||
+        clean.endsWith("できる") ||
+        clean.endsWith("できるよ")
       );
     }
-    // method（どんな工夫をしていますか）
+    // method（どんな工夫・よさ・社会ですか）
     return (
       clean.endsWith("る") ||
       clean.endsWith("た") ||
       clean.endsWith("いる") ||
+      clean.endsWith("う") ||
       clean.endsWith("工夫") ||
       clean.endsWith("ため") ||
-      clean.endsWith("こと")
+      clean.endsWith("から") ||
+      clean.endsWith("こと") ||
+      clean.endsWith("よ") ||
+      clean.endsWith("だ") ||
+      clean.endsWith("です") ||
+      clean.endsWith("ます") ||
+      clean.endsWith("社会") ||
+      clean.endsWith("地帯")
     );
   }
 
