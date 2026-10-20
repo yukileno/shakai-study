@@ -59,8 +59,8 @@
 - 画像は **Google Flow（Nano Banana 2.1・0クレジット表示）** で生成し `css/img/` に保存済み：`m01〜m10.jpg`（図鑑モンスター）、`boss.jpg`、`bg.jpg`（戦闘背景）。生成時は必ず「生成には 0 クレジットが使用されます」の表示を確認し、クレジット消費が出たら止めること。Flow は1回に1プロンプトずつ送信し、送信ボタンは `arrow_forward` の ref で押す。
 - 追加ファイル：`js/game.js`（バトルHUD・コンボ・HP・ガチャ・図鑑・コイン/チケット、`window.Game`）、`css/game.css`（ダークネオン調）。`index.html` に canvas・バトルステージ・ガチャ/図鑑モーダルを追加、`js/app.js` から `Game.*` を呼ぶフックを追加。
 - 動作確認済み：Step1 斬撃＆コンボ、Step3 魔法陣＋超必殺（9999）、ガチャ・図鑑。
-- Step1 の敵10体も生成済み：`css/img/e01〜e10.jpg`（問題 q1〜q10 に対応、`game.js` の `showEnemy` が読み込み、失敗時のみ絵文字にフォールバック）。ボス画像は Step2/3 で表示。
-- Step2 の中ボス5体も生成済み：`css/img/f01〜f05.jpg`（パズル p1〜p5 に対応、失敗時は `boss.jpg`）。Step3 は `boss.jpg`。
-- Step3 のボス5形態も生成済み：`css/img/g01〜g05.jpg`（d1〜d5 に対応）。BGMは `game.js` の `BGM`（Web Audio自動演奏、ミュートボタンで停止）。
-- 公開：GitHub Pages（リポジトリ `yukileno/shakai-study`）。`.gitignore` は `*.jpg` を除外しつつ `css/img/*.jpg` だけ例外許可（教材原本は引き続き除外）。
+- Step1 の敵10体も生成済み：`css/img/e01〜e10.webp`（問題 q1〜q10 に対応、`game.js` の `showEnemy` が読み込み、失敗時のみ絵文字にフォールバック）。ボス画像は Step2/3 で表示。
+- Step2 の中ボス5体も生成済み：`css/img/f01〜f05.webp`（パズル p1〜p5 に対応、失敗時は `boss.jpg`）。Step3 は `boss.jpg`。
+- Step3 のボス5形態も生成済み：`css/img/g01〜g05.webp`（d1〜d5 に対応）。BGMは `game.js` の `BGM`（Web Audio自動演奏、ミュートボタンで停止）。
+- 公開：GitHub Pages（リポジトリ `yukileno/shakai-study`）。`.gitignore` は `*.jpg` を除外しつつ `css/img/*.jpg（現在の画像は軽量化した .webp。元の1024px JPEGはgit履歴にあり）` だけ例外許可（教材原本は引き続き除外）。
 - 未対応（今後）：なし（新規アイデア待ち）。

@@ -51,7 +51,7 @@ body.in-battle { background: #060a1f; }
 
 /* ホーム */
 .hero-banner {
-  background: linear-gradient(180deg, rgba(5, 8, 22, 0.25), rgba(5, 8, 22, 0.8)), url("img/bg.jpg") center 55% / cover;
+  background: linear-gradient(180deg, rgba(5, 8, 22, 0.25), rgba(5, 8, 22, 0.8)), url("img/bg.webp") center 55% / cover;
   min-height: 260px;
   display: flex;
   align-items: flex-end;
@@ -94,7 +94,7 @@ body.in-battle { background: #060a1f; }
 .bs-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 8, 22, 0.1), rgba(5, 8, 22, 0.55)), url("img/bg.jpg") center 60% / cover;
+  background: linear-gradient(180deg, rgba(5, 8, 22, 0.1), rgba(5, 8, 22, 0.55)), url("img/bg.webp") center 60% / cover;
 }
 .bs-hud {
   position: relative;

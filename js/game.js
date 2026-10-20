@@ -6,7 +6,7 @@
   "use strict";
 
   const KEY = "kotodama_game_v1";
-  const img = (id) => `css/img/${id}.jpg`;
+  const img = (id) => `css/img/${id}.webp`;
   const RARITY_WEIGHT = { SR: 45, SSR: 35, UR: 15, LEGEND: 5 };
 
   let sv = load();
@@ -175,7 +175,7 @@
       } else {
         const num = String((q.id || "").replace(/\D/g, "")).padStart(2, "0");
         const fallback = `<span class="enemy-emoji">${q.enemyIcon || "👾"}</span>`;
-        art.innerHTML = `<img src="css/img/e${num}.jpg" alt="${q.enemyName || ""}">`;
+        art.innerHTML = `<img src="css/img/e${num}.webp" alt="${q.enemyName || ""}">`;
         art.querySelector("img").addEventListener("error", () => {
           art.innerHTML = fallback;
         });

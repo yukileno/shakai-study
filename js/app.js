@@ -271,7 +271,7 @@
         <div class="steps-grid">
           <!-- Step 1 -->
           <div class="step-launch-card step-1">
-            <img class="quest-thumb" src="css/img/e01.jpg" alt="">
+            <img class="quest-thumb" src="css/img/e01.webp" alt="">
             <div class="quest-body">
               <div class="step-card-top">
                 <span class="step-label-pill">Step 1（基礎・再認）</span>
@@ -289,7 +289,7 @@
 
           <!-- Step 2 -->
           <div class="step-launch-card step-2">
-            <img class="quest-thumb" src="css/img/f01.jpg" alt="">
+            <img class="quest-thumb" src="css/img/f01.webp" alt="">
             <div class="quest-body">
               <div class="step-card-top">
                 <span class="step-label-pill">Step 2（文の組み立て）</span>
@@ -307,7 +307,7 @@
 
           <!-- Step 3 -->
           <div class="step-launch-card step-3">
-            <img class="quest-thumb" src="css/img/g01.jpg" alt="">
+            <img class="quest-thumb" src="css/img/g01.webp" alt="">
             <div class="quest-body">
               <div class="step-card-top">
                 <span class="step-label-pill">Step 3（記述・自己説明）</span>
