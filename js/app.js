@@ -271,7 +271,8 @@
         <div class="steps-grid">
           <!-- Step 1 -->
           <div class="step-launch-card step-1">
-            <div>
+            <img class="quest-thumb" src="css/img/e01.jpg" alt="">
+            <div class="quest-body">
               <div class="step-card-top">
                 <span class="step-label-pill">Step 1（基礎・再認）</span>
                 <span class="crown-status ${s1Prog.cleared ? "cleared" : ""}">
@@ -288,7 +289,8 @@
 
           <!-- Step 2 -->
           <div class="step-launch-card step-2">
-            <div>
+            <img class="quest-thumb" src="css/img/f01.jpg" alt="">
+            <div class="quest-body">
               <div class="step-card-top">
                 <span class="step-label-pill">Step 2（文の組み立て）</span>
                 <span class="crown-status ${s2Prog.cleared ? "cleared" : ""}">
@@ -305,7 +307,8 @@
 
           <!-- Step 3 -->
           <div class="step-launch-card step-3">
-            <div>
+            <img class="quest-thumb" src="css/img/g01.jpg" alt="">
+            <div class="quest-body">
               <div class="step-card-top">
                 <span class="step-label-pill">Step 3（記述・自己説明）</span>
                 <span class="crown-status ${s3Prog.cleared ? "cleared" : ""}">

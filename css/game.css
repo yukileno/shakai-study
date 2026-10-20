@@ -519,3 +519,207 @@ body.step3-active .bs-charge-row { display: block; }
 .btn-ghost-sm { background: rgba(15, 23, 42, 0.7); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.5); border-radius: 8px; }
 .btn-ghost-sm:disabled { opacity: 0.5; }
 .puzzle-slots.empty { background: rgba(2, 6, 23, 0.55); }
+
+/* ==========================================
+   ホーム画面：単元カードをクエスト選択風に
+========================================== */
+.unit-card {
+  background: linear-gradient(160deg, rgba(30, 27, 75, 0.92), rgba(15, 23, 42, 0.94));
+  border: 1px solid rgba(129, 140, 248, 0.55);
+  border-radius: 22px;
+  padding: 22px 24px 18px;
+  color: #e2e8f0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.unit-icon {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(129, 140, 248, 0.7);
+}
+.unit-tag {
+  background: rgba(99, 102, 241, 0.25);
+  color: #c7d2fe;
+  border: 1px solid rgba(165, 180, 252, 0.55);
+  border-radius: 6px;
+}
+.unit-pages { color: #94a3b8; }
+.unit-title { color: #f8fafc; font-weight: 900; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+.unit-subtitle { color: #a5b4fc; }
+
+.steps-grid { gap: 14px; }
+.step-launch-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 0 14px;
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px solid var(--q, #6366f1);
+  border-radius: 18px;
+  color: #e2e8f0;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+.step-launch-card:hover { transform: translateY(-4px); box-shadow: 0 0 26px var(--q, #6366f1); }
+.step-launch-card.step-1 { --q: #38bdf8; }
+.step-launch-card.step-2 { --q: #2dd4bf; }
+.step-launch-card.step-3 { --q: #fb923c; }
+.quest-thumb {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  object-position: center 30%;
+  background: radial-gradient(#ffffff, #cbd5e1);
+  border-bottom: 3px solid var(--q);
+}
+.quest-body { padding: 0 16px; flex: 1; }
+.step-launch-card > button { margin: 0 16px; }
+.step-label-pill {
+  background: var(--q);
+  color: #0f172a;
+  border-radius: 6px;
+  font-weight: 900;
+}
+.crown-status { color: #94a3b8; font-weight: 800; }
+.crown-status.cleared { color: #fde047; text-shadow: 0 0 10px rgba(253, 224, 71, 0.8); }
+.step-card-title { color: #fff; font-weight: 900; }
+.step-card-desc { color: #94a3b8; font-size: 0.86rem; }
+.step-launch-card .btn-primary {
+  background: linear-gradient(180deg, var(--q), color-mix(in srgb, var(--q) 60%, #000)) !important;
+  color: #0f172a;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.55), 0 0 16px var(--q);
+}
+.unit-footer-bar {
+  background: transparent;
+  border-top: 1px solid rgba(129, 140, 248, 0.3);
+  color: #94a3b8;
+}
+.unit-footer-bar span { color: #94a3b8 !important; }
+
+/* ==========================================
+   16:9 横長：スクロール不要の固定レイアウト
+========================================== */
+@media (min-width: 1000px) {
+  body.in-battle { height: 100vh; overflow: hidden; }
+  body.in-battle .app-header .header-inner { padding: 6px 20px; }
+  body.in-battle .logo-icon { font-size: 1.5rem; }
+  body.in-battle .logo-main { font-size: 1.05rem; }
+  body.in-battle .main-container {
+    height: calc(100vh - var(--hdr, 56px));
+    padding: 10px 20px 12px;
+    grid-template-rows: auto minmax(0, 1fr);
+    row-gap: 8px;
+  }
+  body.in-battle .battle-stage {
+    position: relative;
+    top: 0;
+    height: 100%;
+    min-height: 0;
+  }
+  body.in-battle #study-nav { margin: 0; padding: 0; }
+  body.in-battle .view.active {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+  }
+  body.in-battle .study-card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 18px 14px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #6366f1 transparent;
+  }
+  body.in-battle .progress-header { margin-bottom: 6px; }
+  body.in-battle .question-title {
+    font-size: clamp(1rem, 2.1vh, 1.35rem);
+    padding: 10px 14px 10px 20px;
+    margin: 8px 0 10px;
+  }
+  body.in-battle .instruction-sub { margin-bottom: 6px; font-size: 0.85rem; }
+  body.in-battle .choices-grid { gap: 8px; }
+  body.in-battle .choice-btn {
+    min-height: clamp(46px, 7vh, 64px);
+    padding: 6px 12px;
+    font-size: clamp(0.95rem, 1.9vh, 1.1rem);
+  }
+  body.in-battle .choice-num { width: 30px; height: 30px; }
+  body.in-battle .feedback-box {
+    margin-top: 10px;
+    padding: 10px 14px;
+    flex: 0 0 auto;
+  }
+  body.in-battle .feedback-header { font-size: 1rem; margin-bottom: 4px; }
+  body.in-battle .explanation-text { font-size: 0.9rem; line-height: 1.5; margin: 6px 0; }
+  body.in-battle .feedback-actions { margin-top: 6px; gap: 8px; }
+  body.in-battle .btn-lg { padding: 8px 18px; font-size: 1rem; }
+  /* Step2 */
+  body.in-battle .puzzle-answer-zone { padding: 8px 12px; margin-bottom: 8px; }
+  body.in-battle .puzzle-pool-zone { padding: 8px 12px; margin-bottom: 8px; }
+  body.in-battle .puzzle-slots { min-height: 48px; padding: 6px; }
+  body.in-battle .word-block { padding: 6px 12px; font-size: 0.98rem; }
+  body.in-battle .center-actions { margin: 4px 0; }
+  body.in-battle .completed-sentence-box { padding: 6px 10px; margin-bottom: 4px; }
+  /* Step3 */
+  body.in-battle .keyword-checklist-card { padding: 8px 12px; margin-bottom: 8px; }
+  body.in-battle .keyword-badges-list { gap: 6px; }
+  body.in-battle .kw-check-badge { padding: 4px 10px; font-size: 0.88rem; }
+  body.in-battle .descriptive-textarea { min-height: 0; height: 15vh; padding: 8px 12px; }
+  body.in-battle .voice-bar { margin-bottom: 6px; }
+  body.in-battle .btn-mic { padding: 8px 16px; }
+  body.in-battle .input-bottom-bar { margin-top: 6px; }
+  body.in-battle .advice-item { padding: 5px 10px; font-size: 0.88rem; }
+  body.in-battle .model-answer-card { padding: 8px 12px; margin-top: 6px; }
+}
+
+/* ホーム：旧スタイルの上書き（詳細度合わせ）と幅 */
+.step-launch-card.step-1,
+.step-launch-card.step-2,
+.step-launch-card.step-3 {
+  background: rgba(2, 6, 23, 0.6);
+  border-color: var(--q);
+  padding: 0 0 14px;
+  justify-content: flex-start;
+}
+.quest-thumb { height: 150px; object-position: center 25%; }
+body:not(.in-battle) .main-container { max-width: 1180px; }
+.hero-banner { min-height: 200px; }
+
+@media (min-width: 1000px) {
+  /* Step3 採点後：入力まわりを小さくして1画面に収める */
+  body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .keyword-checklist-card,
+  body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .voice-bar { display: none; }
+  body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .descriptive-textarea { height: 8vh; }
+  body.in-battle .rubric-note-text { font-size: 0.82rem; margin-top: 2px; }
+}
+
+@media (min-width: 1000px) {
+  body.in-battle .puzzle-pool-zone:has(#s2-pool-blocks:empty) { display: none; }
+}
+@media (min-width: 1000px) and (max-height: 820px) {
+  body.in-battle .study-card { padding: 10px 14px; }
+  body.in-battle .progress-header { margin-bottom: 4px; }
+  body.in-battle .question-title { padding: 6px 12px 6px 18px; margin: 6px 0 8px; font-size: 1rem; }
+  body.in-battle .descriptive-textarea { height: 11vh; }
+  body.in-battle .keyword-checklist-card { padding: 6px 10px; margin-bottom: 6px; }
+  body.in-battle .checklist-title { font-size: 0.8rem; margin-bottom: 4px; }
+  body.in-battle .kw-check-badge { padding: 2px 8px; font-size: 0.8rem; }
+  body.in-battle .kw-hint { display: none; }
+  body.in-battle .puzzle-answer-zone, body.in-battle .puzzle-pool-zone { padding: 6px 10px; margin-bottom: 6px; }
+  body.in-battle .word-block { padding: 4px 10px; font-size: 0.92rem; }
+  body.in-battle .feedback-box { padding: 8px 12px; margin-top: 8px; }
+  body.in-battle .explanation-text { font-size: 0.84rem; margin: 4px 0; }
+  body.in-battle .instruction-sub { font-size: 0.8rem; margin-bottom: 4px; }
+  body.in-battle .btn-lg { padding: 6px 14px; }
+  body.in-battle .advice-item { padding: 3px 8px; font-size: 0.82rem; }
+  body.in-battle .model-answer-card { padding: 6px 10px; }
+  body.in-battle .model-answer-header { font-size: 0.85rem; }
+}
+
+@media (min-width: 1000px) {
+  body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .instruction-sub { display: none; }
+}

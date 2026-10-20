@@ -60,6 +60,11 @@
     }
   }
 
+  function setHeaderVar() {
+    const h = document.querySelector(".app-header");
+    if (h) document.documentElement.style.setProperty("--hdr", h.offsetHeight + "px");
+  }
+
   function setBar(id, pct) {
     const el = $(id);
     if (el) el.style.width = Math.max(0, Math.min(100, pct)) + "%";
@@ -106,6 +111,8 @@
   const Game = {
     init() {
       if (global.Fx) global.Fx.init("fx-canvas");
+      setHeaderVar();
+      window.addEventListener("resize", setHeaderVar);
       renderChips();
       renderPartner();
       $("btn-gacha").addEventListener("click", openGacha);
@@ -122,6 +129,7 @@
     // 画面切り替え時
     onView(viewId) {
       const stage = $("battle-stage");
+      setTimeout(setHeaderVar, 0);
       const isStudy = /^view-step[123]$/.test(viewId);
       stage.classList.toggle("hidden", !isStudy);
       document.body.classList.toggle("in-battle", isStudy);
