@@ -873,7 +873,6 @@
         <div style="margin-bottom: 8px; display:flex; gap:6px; flex-wrap:wrap;">${kwBadges}</div>
         <div class="summary-a-row">
           <span class="summary-a">✍️ ${d.modelAnswer}</span>
-          <button type="button" class="btn-speak-sm" data-speak="${d.modelAnswer}">🔊 読み上げ</button>
         </div>
       `;
       bodyEl.appendChild(item);
@@ -985,11 +984,6 @@
 
     document.getElementById("btn-s3-grade").addEventListener("click", gradeStep3Answer);
 
-    document.getElementById("btn-s3-speak").addEventListener("click", () => {
-      const q = state.s3Questions[state.s3Index];
-      if (q) speakText(q.modelAnswer);
-    });
-
     document.getElementById("btn-s3-retry").addEventListener("click", () => {
       document.getElementById("s3-feedback").classList.add("hidden");
       s3Textarea.focus();
@@ -1015,10 +1009,6 @@
       if (e.target.id === "modal-summary") {
         stopSpeaking();
         document.getElementById("modal-summary").classList.add("hidden");
-      }
-      const speakBtn = e.target.closest("button[data-speak]");
-      if (speakBtn) {
-        speakText(speakBtn.getAttribute("data-speak"));
       }
     });
   }
