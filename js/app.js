@@ -592,7 +592,8 @@
         clean.endsWith("ので") ||
         clean.endsWith("ようにするため") ||
         clean.endsWith("できる") ||
-        clean.endsWith("できるよ")
+        clean.endsWith("できるよ") ||
+        clean.endsWith("つながる")
       );
     }
     // method（どんな工夫・よさ・社会ですか）
@@ -601,6 +602,8 @@
       clean.endsWith("た") ||
       clean.endsWith("いる") ||
       clean.endsWith("う") ||
+      clean.endsWith("ない") ||
+      clean.endsWith("い") ||
       clean.endsWith("工夫") ||
       clean.endsWith("ため") ||
       clean.endsWith("から") ||
@@ -610,7 +613,14 @@
       clean.endsWith("です") ||
       clean.endsWith("ます") ||
       clean.endsWith("社会") ||
-      clean.endsWith("地帯")
+      clean.endsWith("地帯") ||
+      clean.endsWith("切") ||
+      clean.endsWith("り") ||
+      clean.endsWith("み") ||
+      clean.endsWith("ー") ||
+      clean.endsWith("場") ||
+      clean.endsWith("港") ||
+      clean.endsWith("国")
     );
   }
 
