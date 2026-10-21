@@ -946,26 +946,6 @@ body {
   font-size: 1.05rem;
 }
 
-.btn-speak, .btn-speak-sm {
-  background: #e0f2fe;
-  color: #0369a1;
-  border: 2px solid #7dd3fc;
-  border-radius: var(--radius-sm);
-  padding: 8px 14px;
-  font-weight: 800;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.btn-speak-sm {
-  padding: 4px 10px;
-  font-size: 0.8rem;
-}
-
-.btn-speak:hover, .btn-speak-sm:hover {
-  background: #bae6fd;
-}
-
 .btn-ghost-sm {
   background: #f1f5f9;
   color: #475569;

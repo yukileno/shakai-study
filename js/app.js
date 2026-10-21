@@ -79,27 +79,6 @@
   }
 
   // ==========================================
-  // 音声読み上げ（Web Speech API: speechSynthesis）
-  // ==========================================
-  function speakText(text) {
-    if (!("speechSynthesis" in window)) {
-      alert("お使いのブラウザは音声読み上げに対応していません。");
-      return;
-    }
-    window.speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = "ja-JP";
-    utter.rate = 1.0;
-    window.speechSynthesis.speak(utter);
-  }
-
-  function stopSpeaking() {
-    if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
-  }
-
-  // ==========================================
   // ユーティリティ（シャッフル）
   // ==========================================
   function shuffleArray(arr) {
@@ -117,8 +96,6 @@
   // 画面切り替え
   // ==========================================
   function showView(viewId) {
-    stopSpeaking();
-
     document.querySelectorAll(".view").forEach((el) => {
       el.classList.remove("active");
     });
@@ -924,13 +901,7 @@
     });
 
     // Step 1 ボタン
-    document.getElementById("btn-s1-speak").addEventListener("click", () => {
-      const q = state.s1Questions[state.s1Index];
-      if (q) speakText(`正解は、${q.answer}、です。${q.explanation}`);
-    });
-
     document.getElementById("btn-s1-next").addEventListener("click", () => {
-      stopSpeaking();
       if (state.s1Index + 1 < state.s1Questions.length) {
         state.s1Index++;
         renderStep1Question();
@@ -956,13 +927,7 @@
 
     document.getElementById("btn-s2-check").addEventListener("click", handleStep2Check);
 
-    document.getElementById("btn-s2-speak").addEventListener("click", () => {
-      const q = state.s2Questions[state.s2Index];
-      if (q) speakText(q.blocks.join(""));
-    });
-
     document.getElementById("btn-s2-next").addEventListener("click", () => {
-      stopSpeaking();
       if (state.s2Index + 1 < state.s2Questions.length) {
         state.s2Index++;
         renderStep2Question();
@@ -990,7 +955,6 @@
     });
 
     document.getElementById("btn-s3-next").addEventListener("click", () => {
-      stopSpeaking();
       if (state.s3Index + 1 < state.s3Questions.length) {
         state.s3Index++;
         renderStep3Question();
@@ -1001,14 +965,12 @@
 
     // まとめモーダル
     document.getElementById("btn-close-modal").addEventListener("click", () => {
-      stopSpeaking();
       document.getElementById("modal-summary").classList.add("hidden");
     });
 
     document.getElementById("modal-summary").addEventListener("click", (e) => {
       if (e.target.id === "modal-summary") {
-        stopSpeaking();
-        document.getElementById("modal-summary").classList.add("hidden");
+          document.getElementById("modal-summary").classList.add("hidden");
       }
     });
   }

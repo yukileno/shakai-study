@@ -419,14 +419,14 @@ body.step3-active .bs-charge-row { display: block; }
 .btn-primary:hover:not(:disabled) { filter: brightness(1.12); transform: translateY(-2px); }
 .btn-primary:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 #9a3412; }
 .btn-primary:disabled { filter: grayscale(0.8) brightness(0.6); box-shadow: none; }
-.btn-secondary, .btn-speak, .btn-speak-sm {
+.btn-secondary {
   background: rgba(99, 102, 241, 0.2);
   color: #e0e7ff;
   border: 1px solid rgba(165, 180, 252, 0.6);
   border-radius: 10px;
   font-weight: 800;
 }
-.btn-secondary:hover, .btn-speak:hover, .btn-speak-sm:hover { background: rgba(99, 102, 241, 0.45); }
+.btn-secondary:hover { background: rgba(99, 102, 241, 0.45); }
 
 /* Step2：語句ブロック */
 .puzzle-answer-zone, .puzzle-pool-zone { color: #e2e8f0; }
