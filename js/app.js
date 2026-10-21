@@ -995,14 +995,6 @@
       showView("view-home");
     });
 
-    // 記録リセット
-    document.getElementById("btn-reset-progress").addEventListener("click", () => {
-      if (confirm("これまでのクリア王冠の記録をリセットしますか？")) {
-        localStorage.removeItem(STORAGE_KEY);
-        renderHomeUnits();
-      }
-    });
-
     // ホーム画面のイベント委譲
     document.getElementById("units-container").addEventListener("click", (e) => {
       const btn = e.target.closest("button[data-action]");
