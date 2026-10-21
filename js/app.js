@@ -323,15 +323,6 @@
             </button>
           </div>
         </div>
-
-        <div class="unit-footer-bar">
-          <span style="font-size: 0.88rem; font-weight: 700; color: #475569;">
-            💡 テスト前のおさらいや音読練習には「重要記述＆キーワードまとめ」を使おう！
-          </span>
-          <button class="btn-secondary" data-action="open-summary" data-unit="${unit.id}">
-            📖 重要記述＆キーワードまとめを見る
-          </button>
-        </div>
       `;
       container.appendChild(card);
     });
