@@ -478,16 +478,6 @@ body.step3-active .bs-charge-row { display: block; }
 }
 .descriptive-textarea:focus { outline: none; border-color: #fde047; box-shadow: 0 0 20px rgba(253, 224, 71, 0.4); }
 .descriptive-textarea::placeholder { color: #64748b; }
-.btn-mic {
-  background: linear-gradient(180deg, #ec4899, #be185d);
-  color: #fff;
-  border: none;
-  border-radius: 99px;
-  font-weight: 900;
-  box-shadow: 0 4px 0 #831843, 0 0 18px rgba(236, 72, 153, 0.55);
-}
-.btn-mic.listening { animation: pop 0.8s infinite alternate; box-shadow: 0 0 30px #f472b6; }
-.mic-status { color: #94a3b8; }
 .advice-item { background: rgba(2, 6, 23, 0.5); border-left: 4px solid #fbbf24; color: #fef3c7; }
 .model-answer-card { background: rgba(30, 58, 138, 0.35); border: 1px solid rgba(96, 165, 250, 0.6); color: #dbeafe; }
 .model-answer-text { color: #fff; }
@@ -669,8 +659,6 @@ body.step3-active .bs-charge-row { display: block; }
   body.in-battle .keyword-badges-list { gap: 6px; }
   body.in-battle .kw-check-badge { padding: 4px 10px; font-size: 0.88rem; }
   body.in-battle .descriptive-textarea { min-height: 0; height: 15vh; padding: 8px 12px; }
-  body.in-battle .voice-bar { margin-bottom: 6px; }
-  body.in-battle .btn-mic { padding: 8px 16px; }
   body.in-battle .input-bottom-bar { margin-top: 6px; }
   body.in-battle .advice-item { padding: 5px 10px; font-size: 0.88rem; }
   body.in-battle .model-answer-card { padding: 8px 12px; margin-top: 6px; }
@@ -691,8 +679,7 @@ body:not(.in-battle) .main-container { max-width: 1180px; }
 
 @media (min-width: 1000px) {
   /* Step3 採点後：入力まわりを小さくして1画面に収める */
-  body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .keyword-checklist-card,
-  body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .voice-bar { display: none; }
+  body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .keyword-checklist-card { display: none; }
   body.in-battle .study-card:has(#s3-feedback:not(.hidden)) .descriptive-textarea { height: 8vh; }
   body.in-battle .rubric-note-text { font-size: 0.82rem; margin-top: 2px; }
 }

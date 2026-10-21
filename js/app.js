@@ -33,11 +33,7 @@
     s3Index: 0,
     s3Score: 0,
     s3PerfectCount: 0,
-    s3Graded: false,
-
-    // 音声認識
-    recognition: null,
-    isListening: false
+    s3Graded: false
   };
 
   // ==========================================
@@ -104,91 +100,6 @@
   }
 
   // ==========================================
-  // 音声認識（Web Speech API: SpeechRecognition）
-  // ==========================================
-  function initSpeechRecognition() {
-    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const micBtn = document.getElementById("btn-s3-mic");
-    const micStatus = document.getElementById("mic-status");
-
-    if (!SpeechRec) {
-      if (micBtn) {
-        micBtn.disabled = true;
-        micBtn.style.opacity = "0.5";
-      }
-      if (micStatus) {
-        micStatus.textContent = "※このブラウザは音声入力に未対応です。キーボードで入力してください。";
-      }
-      return;
-    }
-
-    const rec = new SpeechRec();
-    rec.lang = "ja-JP";
-    rec.interimResults = true;
-    rec.continuous = false;
-
-    rec.onstart = function () {
-      state.isListening = true;
-      micBtn.classList.add("listening");
-      document.getElementById("mic-btn-label").textContent = "聞いています…（おわったらタップ）";
-      micStatus.textContent = "🎤 マイクに向かって理由や工夫を話してみよう！";
-    };
-
-    rec.onresult = function (event) {
-      let transcript = "";
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        transcript += event.results[i][0].transcript;
-      }
-      const textarea = document.getElementById("s3-textarea");
-      if (textarea) {
-        // 確定結果のときに句点を補う
-        const isFinal = event.results[event.results.length - 1].isFinal;
-        let cleaned = transcript.trim();
-        if (isFinal && cleaned && !cleaned.endsWith("。")) {
-          cleaned += "。";
-        }
-        textarea.value = cleaned;
-        updateStep3RealtimeBadges();
-      }
-    };
-
-    rec.onerror = function () {
-      stopListeningUI();
-      micStatus.textContent = "うまく聞き取れませんでした。もう一度🎤をおすか、キーボードで入力してね。";
-    };
-
-    rec.onend = function () {
-      stopListeningUI();
-    };
-
-    state.recognition = rec;
-  }
-
-  function stopListeningUI() {
-    state.isListening = false;
-    const micBtn = document.getElementById("btn-s3-mic");
-    const label = document.getElementById("mic-btn-label");
-    const micStatus = document.getElementById("mic-status");
-    if (micBtn) micBtn.classList.remove("listening");
-    if (label) label.textContent = "マイクをおして「声」で説明する";
-    if (micStatus) micStatus.textContent = "声で入った文字をキーボードで手直ししてもOKです！";
-  }
-
-  function toggleMic() {
-    if (!state.recognition) return;
-    if (state.isListening) {
-      state.recognition.stop();
-    } else {
-      stopSpeaking();
-      try {
-        state.recognition.start();
-      } catch (e) {
-        state.recognition.stop();
-      }
-    }
-  }
-
-  // ==========================================
   // ユーティリティ（シャッフル）
   // ==========================================
   function shuffleArray(arr) {
@@ -207,9 +118,6 @@
   // ==========================================
   function showView(viewId) {
     stopSpeaking();
-    if (state.isListening && state.recognition) {
-      state.recognition.stop();
-    }
 
     document.querySelectorAll(".view").forEach((el) => {
       el.classList.remove("active");
@@ -316,7 +224,7 @@
                 </span>
               </div>
               <h3 class="step-card-title">キーワード1行記述（全${unit.step3_descriptive.length}問）</h3>
-              <p class="step-card-desc">2つのキーワードを使って、🎤声で話すか⌨️タイピングで1行記述にチャレンジ！</p>
+              <p class="step-card-desc">2つのキーワードを使って、⌨️タイピングで1行記述にチャレンジ！</p>
             </div>
             <button class="btn-primary" data-action="start-step" data-unit="${unit.id}" data-step="3" style="background: var(--step3-color);">
               Step 3 をはじめる ➔
@@ -635,7 +543,7 @@
       title: "Step 2：語句ブロック並び替え クリア！",
       scoreText: `全 ${total} 問の文構造マスター！`,
       message:
-        "社会科の記述問題の「文の型（〜し、〜するため。）」が身につきました！いよいよ最後の Step 3「キーワード1行記述チャレンジ」で、自分の声や文字で説明してみましょう！",
+        "社会科の記述問題の「文の型（〜し、〜するため。）」が身につきました！いよいよ最後の Step 3「キーワード1行記述チャレンジ」で、自分の文字で説明してみましょう！",
       actions: [
         {
           label: "🎤 Step 3：キーワード1行記述へ進む ➔",
@@ -777,7 +685,7 @@
     const norm = normalizeJapaneseText(rawText);
 
     if (!norm) {
-      alert("まずはマイクで話すか、キーボードで文を入力してみよう！");
+      alert("まずはキーボードで文を入力してみよう！");
       return;
     }
 
@@ -1068,7 +976,6 @@
     const s3Textarea = document.getElementById("s3-textarea");
     s3Textarea.addEventListener("input", updateStep3RealtimeBadges);
 
-    document.getElementById("btn-s3-mic").addEventListener("click", toggleMic);
 
     document.getElementById("btn-s3-clear").addEventListener("click", () => {
       s3Textarea.value = "";
@@ -1119,7 +1026,6 @@
   // 初期化
   document.addEventListener("DOMContentLoaded", () => {
     if (window.Game) Game.init();
-    initSpeechRecognition();
     setupEventListeners();
     renderHomeUnits();
   });

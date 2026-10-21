@@ -42,7 +42,7 @@
           <div class="hero-title-game">⚔️ 言霊モンスターズ ⚔️</div>
           <h1>クイズで斬る！ パズルで雷撃！ 言霊で必殺技！</h1>
           <p>
-            <strong>WAVE 1（4択）</strong>で敵を倒し、<strong>WAVE 2（並び替え）</strong>でボスのバリアを破壊、<strong>WAVE 3（1行記述・声で詠唱）</strong>で超必殺技！ ガチャで仲間を集めよう。
+            <strong>WAVE 1（4択）</strong>で敵を倒し、<strong>WAVE 2（並び替え）</strong>でボスのバリアを破壊、<strong>WAVE 3（1行記述・言霊詠唱）</strong>で超必殺技！ ガチャで仲間を集めよう。
           </p>
         </div>
       </div>
@@ -219,7 +219,7 @@
       <div class="card study-card">
         <div class="progress-header">
           <div class="badge-group">
-            <span class="step-badge step3-color">Step 3：1行記述チャレンジ（声・文字）</span>
+            <span class="step-badge step3-color">Step 3：1行記述チャレンジ</span>
             <span id="s3-q-page" class="page-badge">p.14</span>
           </div>
           <div id="s3-progress-text" class="progress-count">第 1 / 5 問</div>
@@ -241,21 +241,13 @@
           </div>
         </div>
 
-        <!-- 入力エリア（音声入力＆タイピング両対応） -->
+        <!-- 入力エリア（キーボード入力） -->
         <div class="descriptive-input-wrap">
-          <div class="voice-bar">
-            <button id="btn-s3-mic" class="btn-mic" type="button">
-              <span class="mic-icon">🎤</span>
-              <span id="mic-btn-label">マイクをおして「声」で説明する</span>
-            </button>
-            <span id="mic-status" class="mic-status">キーボードで直接入力してもOK！漢字・ひらがな、どちらでも採点できます。</span>
-          </div>
-
           <textarea
             id="s3-textarea"
             class="descriptive-textarea"
             rows="3"
-            placeholder="ここに文を入力するか、上の「🎤マイク」をおして声で説明しよう！（例：〜防いだり、〜よくしたりするため。）"
+            placeholder="ここに文を入力しよう！漢字・ひらがな、どちらでも採点できます。（例：〜防いだり、〜よくしたりするため。）"
           ></textarea>
 
           <div class="input-bottom-bar">
