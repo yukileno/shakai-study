@@ -998,10 +998,61 @@
     });
   }
 
+  // ==========================================
+  // 新しいバージョンの自動チェック（タブを開きっぱなしの端末向け）
+  // サーバーの公開時刻（Last-Modified）が読みこみ時から変わっていたら更新する
+  // ==========================================
+  const updateCheck = { base: null, notified: false };
+
+  async function fetchDeploySignature() {
+    try {
+      const res = await fetch("index.html", { method: "HEAD", cache: "no-store" });
+      if (!res.ok) return null;
+      return (res.headers.get("last-modified") || "") + "|" + (res.headers.get("etag") || "");
+    } catch (e) {
+      return null; // オフラインなどのときは何もしない
+    }
+  }
+
+  async function checkForUpdate() {
+    if (updateCheck.notified) return;
+    const sig = await fetchDeploySignature();
+    if (!sig || sig === "|") return;
+    if (updateCheck.base === null) {
+      updateCheck.base = sig;
+      return;
+    }
+    if (sig === updateCheck.base) return;
+
+    updateCheck.notified = true;
+    // 問題を解いている途中で勝手に再読みこみしない。ホーム画面にいるときだけ自動で更新する
+    const home = document.getElementById("view-home");
+    if (home && home.classList.contains("active")) {
+      location.reload();
+      return;
+    }
+    const bar = document.createElement("div");
+    bar.className = "update-bar";
+    bar.innerHTML =
+      '<span>🆕 新しいバージョンがあるよ！</span><button type="button" class="btn-primary">いま更新する</button>';
+    bar.querySelector("button").addEventListener("click", () => location.reload());
+    document.body.appendChild(bar);
+  }
+
+  function setupUpdateCheck() {
+    checkForUpdate();
+    setInterval(checkForUpdate, 3 * 60 * 1000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) checkForUpdate();
+    });
+    window.addEventListener("focus", checkForUpdate);
+  }
+
   // 初期化
   document.addEventListener("DOMContentLoaded", () => {
     if (window.Game) Game.init();
     setupEventListeners();
     renderHomeUnits();
+    setupUpdateCheck();
   });
 })();
