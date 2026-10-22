@@ -33,7 +33,8 @@
     s3Index: 0,
     s3Score: 0,
     s3PerfectCount: 0,
-    s3Graded: false
+    s3Graded: false,
+    s3Partial: false
   };
 
   // ==========================================
@@ -555,6 +556,7 @@
     const q = state.s3Questions[state.s3Index];
     const total = state.s3Questions.length;
     state.s3Graded = false;
+    state.s3Partial = false;
 
     document.getElementById("s3-q-page").textContent = q.page;
     document.getElementById("s3-progress-text").textContent = `第 ${state.s3Index + 1} / ${total} 問`;
@@ -722,7 +724,11 @@
         `✅ 文の終わり方もバッチリです！`
       );
     } else if (matchedKeywords.length > 0) {
-      if (window.Game) Game.partialHit();
+      // コインは1問につき1回だけ（満点後や、Enter連打での再採点では増やさない）
+      if (window.Game && !state.s3Graded && !state.s3Partial) {
+        state.s3Partial = true;
+        Game.partialHit();
+      }
       fb.classList.add("is-partial");
       fbHeader.textContent = "💡 おしい！ あと少し手直しすると100点満点になります！";
 
@@ -872,6 +878,13 @@
   // イベントリスナー登録
   // ==========================================
   function setupEventListeners() {
+    // ボタンにフォーカスがあるときの Enter / Space 押しっぱなし（キーリピート）で連続クリックされないようにする
+    document.addEventListener("keydown", (e) => {
+      if (e.repeat && (e.key === "Enter" || e.key === " ") && e.target.tagName === "BUTTON") {
+        e.preventDefault();
+      }
+    });
+
     // トップへ戻る
     document.getElementById("btn-home").addEventListener("click", () => {
       showView("view-home");
