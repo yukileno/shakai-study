@@ -2004,6 +2004,1006 @@ const MONSTERS = [
     color: "#a78bfa",
     title: "未来を照らす虹の竜",
     lore: "未来の社会を七色に照らす、伝説の虹の竜。"
+  },
+  {
+    id: "m201",
+    name: "ジャガイモ・ゴロン",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🥔",
+    color: "#d97706",
+    title: "北の大地の芋の子",
+    lore: "北海道の広い畑でごろごろ育つ、ほくほくのジャガイモの子。"
+  },
+  {
+    id: "m202",
+    name: "コーン・パピー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🌽",
+    color: "#facc15",
+    title: "とうもろこし畑の子犬",
+    lore: "夏の畑で黄色い粒をいっぱいつけた、元気な子犬。"
+  },
+  {
+    id: "m203",
+    name: "ナス・ニンジャ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍆",
+    color: "#7c3aed",
+    title: "夏野菜の忍者",
+    lore: "高知や熊本のハウスで育つ、むらさき色の忍者。"
+  },
+  {
+    id: "m204",
+    name: "ニンジン・ラビット",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🥕",
+    color: "#f97316",
+    title: "畑を走る赤いウサギ",
+    lore: "土の中でぐんぐん育つニンジンをかかえたウサギ。"
+  },
+  {
+    id: "m205",
+    name: "イチゴ・プリンセス",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍓",
+    color: "#ef4444",
+    title: "ハウスで育つ赤い姫",
+    lore: "ビニールハウスでだいじに育てられた、あまいイチゴの姫。"
+  },
+  {
+    id: "m206",
+    name: "メロン・メロメロ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍈",
+    color: "#86efac",
+    title: "あまいメロンの妖精",
+    lore: "ていねいに育てられた、あまくてかおりの良いメロンの妖精。"
+  },
+  {
+    id: "m207",
+    name: "ピーナッツ・コロコロ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🥜",
+    color: "#a16207",
+    title: "千葉のおいしい豆",
+    lore: "千葉の畑でおいしく育つ、ころころ転がる落花生。"
+  },
+  {
+    id: "m208",
+    name: "ダイズ・サムライ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🫘",
+    color: "#92400e",
+    title: "みそとしょうゆの元",
+    lore: "みそやとうふの材料になる、小さな大豆のサムライ。"
+  },
+  {
+    id: "m209",
+    name: "ラーメン・ドラゴン",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍜",
+    color: "#fbbf24",
+    title: "湯気をふく麺の竜",
+    lore: "小麦粉から作られる麺をくるくる巻いた、湯気の竜。"
+  },
+  {
+    id: "m210",
+    name: "オニギリ・ナイト",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍙",
+    color: "#f1f5f9",
+    title: "ごはんの騎士",
+    lore: "のりのよろいをつけた、ほかほかのごはんの騎士。"
+  },
+  {
+    id: "m211",
+    name: "サケ・ブルワー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍶",
+    color: "#e2e8f0",
+    title: "お酒づくりのクマ",
+    lore: "きれいな水とお米で、おいしいお酒を作る職人グマ。"
+  },
+  {
+    id: "m212",
+    name: "チーズ・マウス",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🧀",
+    color: "#facc15",
+    title: "牧場のチーズネズミ",
+    lore: "牛乳から作られた、とろけるチーズが大好きなネズミ。"
+  },
+  {
+    id: "m213",
+    name: "ブロイラー・ヒヨコ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🐔",
+    color: "#fb923c",
+    title: "鶏肉をとどける子",
+    lore: "大きな鶏舎で育って、みんなの食卓にとどく元気なヒヨコ。"
+  },
+  {
+    id: "m214",
+    name: "ハニー・ビー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🐝",
+    color: "#facc15",
+    title: "花畑のミツバチ",
+    lore: "花畑をとびまわって、あまいはちみつを集めるミツバチ。"
+  },
+  {
+    id: "m215",
+    name: "ハナ・フェアリー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🪴",
+    color: "#22c55e",
+    title: "花づくりの妖精",
+    lore: "ハウスで色とりどりの花を育てる、小さな花の妖精。"
+  },
+  {
+    id: "m216",
+    name: "スギ・トレント",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🌲",
+    color: "#166534",
+    title: "人工林の見守り役",
+    lore: "人が植えて育ててきた、スギの森の木の精。"
+  },
+  {
+    id: "m217",
+    name: "キコリ・ビーバー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🪓",
+    color: "#a16207",
+    title: "木を切る働き者",
+    lore: "山で木を切り出して、材木にする働き者のビーバー。"
+  },
+  {
+    id: "m218",
+    name: "ジュウタク・ドワーフ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🏠",
+    color: "#d97706",
+    title: "木の家を建てる小人",
+    lore: "国産の木材を使って、じょうぶな家を建てる大工の小人。"
+  },
+  {
+    id: "m219",
+    name: "イス・ミミック",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🪑",
+    color: "#b45309",
+    title: "家具工場のイス",
+    lore: "工場で作られた、座るとなぜか動き出すイスのモンスター。"
+  },
+  {
+    id: "m220",
+    name: "レンガ・ゴーレム",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🧱",
+    color: "#dc2626",
+    title: "土をやいたゴーレム",
+    lore: "土をかためて高温でやいた、レンガでできたゴーレム。"
+  },
+  {
+    id: "m221",
+    name: "トウキ・フェアリー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🏺",
+    color: "#ea580c",
+    title: "焼き物の妖精",
+    lore: "土をこねて焼く、伝統の焼き物から生まれた妖精。"
+  },
+  {
+    id: "m222",
+    name: "オリモノ・キャット",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🧶",
+    color: "#f472b6",
+    title: "にしじん織の猫",
+    lore: "美しい模様を織り上げる、伝統工芸の職人ネコ。"
+  },
+  {
+    id: "m223",
+    name: "ニンギョウ・ヒナ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🎎",
+    color: "#ef4444",
+    title: "伝統の雛人形",
+    lore: "昔から伝わる技で作られた、かわいい雛人形の子。"
+  },
+  {
+    id: "m224",
+    name: "センス・クレーン",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🪭",
+    color: "#fb7185",
+    title: "扇を持つツル",
+    lore: "京都の職人が作る扇を持って、ひらひら舞うツル。"
+  },
+  {
+    id: "m225",
+    name: "フウリン・スプライト",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🎐",
+    color: "#38bdf8",
+    title: "夏の風鈴妖精",
+    lore: "夏の風にゆれて、涼しい音をひびかせる風鈴の妖精。"
+  },
+  {
+    id: "m226",
+    name: "チョウチン・オバケ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🏮",
+    color: "#dc2626",
+    title: "お祭りのちょうちん",
+    lore: "お祭りの夜を明るく照らす、ちょうちんのおばけ。"
+  },
+  {
+    id: "m227",
+    name: "タイコ・タヌキ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🥁",
+    color: "#b45309",
+    title: "お祭りの太鼓打ち",
+    lore: "どんどんと太鼓を打ちならして、お祭りをもりあげるタヌキ。"
+  },
+  {
+    id: "m228",
+    name: "タナバタ・パンダ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🎋",
+    color: "#16a34a",
+    title: "七夕のねがい",
+    lore: "たんざくをつるして、ねがいごとを空へとどけるパンダ。"
+  },
+  {
+    id: "m229",
+    name: "ツキミ・ウサギ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🎑",
+    color: "#fbbf24",
+    title: "お月見のウサギ",
+    lore: "満月の夜にだんごを作る、お月見のウサギ。"
+  },
+  {
+    id: "m230",
+    name: "セカイ・ツアー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🌐",
+    color: "#3b82f6",
+    title: "世界を旅する地球儀",
+    lore: "地球儀の体を回して、世界中を旅するふしぎな生き物。"
+  },
+  {
+    id: "m231",
+    name: "ボウエキ・ラクダ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🧳",
+    color: "#a16207",
+    title: "荷物を運ぶ商人",
+    lore: "外国から荷物を運んでくる、旅するラクダの商人。"
+  },
+  {
+    id: "m232",
+    name: "ゼイカン・ペンギン",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🛃",
+    color: "#475569",
+    title: "港の税関ペンギン",
+    lore: "外国から来た荷物をチェックする、まじめなペンギン。"
+  },
+  {
+    id: "m233",
+    name: "ユエン・ツバメ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "💴",
+    color: "#16a34a",
+    title: "お金を運ぶ鳥",
+    lore: "外国とのお金のやりとりをする、小さな商人鳥。"
+  },
+  {
+    id: "m234",
+    name: "ロケット・ウサギ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🚀",
+    color: "#f43f5e",
+    title: "宇宙へとぶ子",
+    lore: "ロケットで宇宙にとびだして、地球をながめるウサギ。"
+  },
+  {
+    id: "m235",
+    name: "テンキ・ヒヨコ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🌤️",
+    color: "#fbbf24",
+    title: "天気を知らせる子",
+    lore: "気象衛星の情報から、明日の天気を教えてくれるヒヨコ。"
+  },
+  {
+    id: "m236",
+    name: "キオン・サーモ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🌡️",
+    color: "#ef4444",
+    title: "気温をはかる",
+    lore: "暑さ寒さをはかる、温度計のモンスター。"
+  },
+  {
+    id: "m237",
+    name: "ナツ・ヒマワリ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "☀️",
+    color: "#fbbf24",
+    title: "南の夏のスター",
+    lore: "暑くて雨の多い夏に、太陽にむかって咲くヒマワリ。"
+  },
+  {
+    id: "m238",
+    name: "ツユ・カタツムリ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🌧️",
+    color: "#60a5fa",
+    title: "梅雨の雨好き",
+    lore: "雨のふる梅雨に、しっとりうれしそうなカタツムリ。"
+  },
+  {
+    id: "m239",
+    name: "シゲン・リーフ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍃",
+    color: "#4ade80",
+    title: "森の資源",
+    lore: "森の木から、紙や家の材料をつくり出す葉っぱの子。"
+  },
+  {
+    id: "m240",
+    name: "デンキ・ホタル",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "💡",
+    color: "#facc15",
+    title: "省エネの光",
+    lore: "むだな電気を使わないように、そっと光るホタル。"
+  },
+  {
+    id: "m241",
+    name: "ジテンシャ・ネコ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🚲",
+    color: "#22c55e",
+    title: "エコな移動",
+    lore: "環境にやさしい自転車で町を走る、エコなネコ。"
+  },
+  {
+    id: "m242",
+    name: "エコバッグ・カンガルー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🧴",
+    color: "#0ea5e9",
+    title: "ごみをへらす袋",
+    lore: "エコバッグを持ち歩いて、ごみをへらすカンガルー。"
+  },
+  {
+    id: "m243",
+    name: "フタバ・チャン",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🌱",
+    color: "#84cc16",
+    title: "育つ小さな芽",
+    lore: "大きな木になることをゆめみて育つ、小さな芽。"
+  },
+  {
+    id: "m244",
+    name: "ヤチョウ・ウォッチャー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🐦",
+    color: "#38bdf8",
+    title: "自然を見守る鳥",
+    lore: "湿地や森の自然を、静かに見守る小さな鳥。"
+  },
+  {
+    id: "m245",
+    name: "ゾウ・アースキーパー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🐘",
+    color: "#94a3b8",
+    title: "地球の守り手",
+    lore: "絶滅しそうな生き物を守る、やさしい大きなゾウ。"
+  },
+  {
+    id: "m246",
+    name: "シカ・ナラ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🦌",
+    color: "#a16207",
+    title: "奈良の神の使い",
+    lore: "奈良の公園でおじぎをする、ちょっとおちゃめなシカ。"
+  },
+  {
+    id: "m247",
+    name: "スノー・モンキー",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🐒",
+    color: "#92400e",
+    title: "雪の温泉ザル",
+    lore: "雪の中で温泉に入って温まるサル。"
+  },
+  {
+    id: "m248",
+    name: "コイ・ノボリ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🐟",
+    color: "#fb923c",
+    title: "こいのぼりの魚",
+    lore: "五月の空をおよぐ、元気いっぱいのこいのぼり。"
+  },
+  {
+    id: "m249",
+    name: "ガッコウ・ベル",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🏫",
+    color: "#fbbf24",
+    title: "学校のチャイム",
+    lore: "学校の時間を知らせる、元気なチャイムのモンスター。"
+  },
+  {
+    id: "m250",
+    name: "トショ・フクロウ",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "📚",
+    color: "#7c3aed",
+    title: "図書館の物知り",
+    lore: "図書館で本を守る、物知りのフクロウ。"
+  },
+  {
+    id: "m251",
+    name: "ビョウイン・ハート",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🏥",
+    color: "#f43f5e",
+    title: "命を守るハート",
+    lore: "けがや病気の人を助ける、あたたかいハートのモンスター。"
+  },
+  {
+    id: "m252",
+    name: "サツマイモ・ホクホク",
+    rarity: "SR",
+    stars: "★★★☆☆",
+    icon: "🍠",
+    color: "#a855f7",
+    title: "焼きいもの人気者",
+    lore: "あたたかい土地でほくほくにあまく育つ、焼きいもの子。"
+  },
+  {
+    id: "m253",
+    name: "ビル・ドラゴン",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🏙️",
+    color: "#64748b",
+    title: "都会の高層ビル",
+    lore: "都会の高いビルをつなげて作った、ガラスの竜。"
+  },
+  {
+    id: "m254",
+    name: "チカテツ・ワーム",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🚇",
+    color: "#2563eb",
+    title: "地下を走る電車",
+    lore: "地下トンネルを走りぬける、青い電車の大ミミズ。"
+  },
+  {
+    id: "m255",
+    name: "クウコウ・ファルコン",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🛬",
+    color: "#38bdf8",
+    title: "空の玄関口",
+    lore: "空港から世界へ飛び立つ、飛行機のハヤブサ。"
+  },
+  {
+    id: "m256",
+    name: "ミナト・キャプテン",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "⚓",
+    color: "#1e40af",
+    title: "港をしきる船長",
+    lore: "大きな港で船を迎える、ひげの船長。"
+  },
+  {
+    id: "m257",
+    name: "ノウキ・ゴーレム",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🚜",
+    color: "#16a34a",
+    title: "畑を耕す機械",
+    lore: "大きな農業機械を体にもつ、畑のゴーレム。"
+  },
+  {
+    id: "m258",
+    name: "タウエ・ヒメ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🌾",
+    color: "#eab308",
+    title: "田植えの姫",
+    lore: "春に苗を植える、水田の姫。"
+  },
+  {
+    id: "m259",
+    name: "ボクジョウ・クイーン",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🐄",
+    color: "#a3a3a3",
+    title: "牧場の女王",
+    lore: "広い牧場で牛たちを見守る、やさしい女王。"
+  },
+  {
+    id: "m260",
+    name: "ヨウショク・マーメイド",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🐠",
+    color: "#06b6d4",
+    title: "養殖場の人魚",
+    lore: "養殖いかだで魚を育てる、やさしい人魚。"
+  },
+  {
+    id: "m261",
+    name: "カイリュウ・エンジェル",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🌊",
+    color: "#0ea5e9",
+    title: "海流にのる天使",
+    lore: "あたたかい黒潮と冷たい親潮を行き来する、海の天使。"
+  },
+  {
+    id: "m262",
+    name: "リュウヒョウ・ベア",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🧊",
+    color: "#bae6fd",
+    title: "氷にのる北のクマ",
+    lore: "冷たい海の流氷にのって旅するシロクマ。"
+  },
+  {
+    id: "m263",
+    name: "ナンゴク・アイランド",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🌴",
+    color: "#16a34a",
+    title: "南の島のヤシの精",
+    lore: "あたたかい島で、ヤシの木をゆらす島の精。"
+  },
+  {
+    id: "m264",
+    name: "フジサン・テング",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🗻",
+    color: "#60a5fa",
+    title: "富士山の山伏",
+    lore: "日本一の山の頂上で、日本を見守るテング。"
+  },
+  {
+    id: "m265",
+    name: "ホッカイ・ライチョウ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🏔️",
+    color: "#e2e8f0",
+    title: "高山の白い鳥",
+    lore: "高い山のうえで冬は真っ白になる、雷鳥。"
+  },
+  {
+    id: "m266",
+    name: "アソ・サラマンダー",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🌋",
+    color: "#ef4444",
+    title: "大火山の主",
+    lore: "熊本の大きなカルデラにすむ、火山のサラマンダー。"
+  },
+  {
+    id: "m267",
+    name: "ビワコ・ナマズ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🏞️",
+    color: "#22c55e",
+    title: "日本一の湖の主",
+    lore: "滋賀の大きな湖で、みんなを見守る大ナマズ。"
+  },
+  {
+    id: "m268",
+    name: "ヒメジ・シロ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🏯",
+    color: "#a16207",
+    title: "白いお城の姫",
+    lore: "白いお城に住み、街をやさしく見守る姫。"
+  },
+  {
+    id: "m269",
+    name: "イツクシマ・トリイ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "⛩️",
+    color: "#dc2626",
+    title: "海に立つ鳥居",
+    lore: "海の上に立つ、大きな赤い鳥居の守り神。"
+  },
+  {
+    id: "m270",
+    name: "トウキョウ・タワー",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🗼",
+    color: "#ef4444",
+    title: "首都のタワー戦士",
+    lore: "首都東京を見守る、赤と白のタワーの戦士。"
+  },
+  {
+    id: "m271",
+    name: "コッカイ・ジャッジ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🏛️",
+    color: "#cbd5e1",
+    title: "国会の裁き手",
+    lore: "国のルールを話し合って決める、国会の議長。"
+  },
+  {
+    id: "m272",
+    name: "サイバン・ミノタウロス",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "⚖️",
+    color: "#fbbf24",
+    title: "公平な裁判官",
+    lore: "公平に正しい判断をする、はかりを持った戦士。"
+  },
+  {
+    id: "m273",
+    name: "センキョ・ペンギン",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🗳️",
+    color: "#3b82f6",
+    title: "投票箱の守り手",
+    lore: "みんなの一票を大切に守る、まじめなペンギン。"
+  },
+  {
+    id: "m274",
+    name: "ケンポウ・セージ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "📜",
+    color: "#d97706",
+    title: "国の最高のきまり",
+    lore: "国の一番大切なきまりを、守りつづける賢者。"
+  },
+  {
+    id: "m275",
+    name: "カガク・プロフェッサー",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🧑‍🔬",
+    color: "#6366f1",
+    title: "科学の博士",
+    lore: "新しい技術を研究して、くらしを便利にする博士。"
+  },
+  {
+    id: "m276",
+    name: "AI・ガーディアン",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🤖",
+    color: "#38bdf8",
+    title: "考えるロボット",
+    lore: "人間のように考えて、人を助けるロボットの守り手。"
+  },
+  {
+    id: "m277",
+    name: "ジンコウ・エイセイ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🛰️",
+    color: "#818cf8",
+    title: "宇宙の見張り番",
+    lore: "天気や地図を宇宙から見守る、人工衛星の守り手。"
+  },
+  {
+    id: "m278",
+    name: "ホゾン・バッテリー",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🔋",
+    color: "#22c55e",
+    title: "エネルギーをためる",
+    lore: "電気をためて、必要なときに出す、緑のバッテリー戦士。"
+  },
+  {
+    id: "m279",
+    name: "シゼン・ドルイド",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🌿",
+    color: "#16a34a",
+    title: "森を守るドルイド",
+    lore: "豊かな自然を未来へのこす、森のドルイド。"
+  },
+  {
+    id: "m280",
+    name: "クジラ・オーシャン",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🐋",
+    color: "#0369a1",
+    title: "海のやさしい王",
+    lore: "広い海をゆったりと泳ぐ、やさしい大クジラ。"
+  },
+  {
+    id: "m281",
+    name: "ワシ・スカイナイト",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🦅",
+    color: "#a16207",
+    title: "空を守る騎士",
+    lore: "山をこえて空を守る、大きなワシの騎士。"
+  },
+  {
+    id: "m282",
+    name: "ソツギョウ・セージ",
+    rarity: "SSR",
+    stars: "★★★★☆",
+    icon: "🎓",
+    color: "#6366f1",
+    title: "学びのしめくくり",
+    lore: "たくさん学んだ人にぼうしをさずける、卒業の賢者。"
+  },
+  {
+    id: "m283",
+    name: "ミズホ・リュウオウ",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🐉",
+    color: "#0ea5e9",
+    title: "水の国の竜王",
+    lore: "豊かな水と米の国「瑞穂の国」を守る、水の竜王。"
+  },
+  {
+    id: "m284",
+    name: "ガイア・ボルケーノ",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🌋",
+    color: "#ef4444",
+    title: "大地を動かす神",
+    lore: "日本列島をつくった、大きな火山の神。"
+  },
+  {
+    id: "m285",
+    name: "カイヨウ・ガーディアン",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🌊",
+    color: "#06b6d4",
+    title: "海を守る女神",
+    lore: "日本をとりまく海の恵みを守る、海の女神。"
+  },
+  {
+    id: "m286",
+    name: "コウギョウ・ティターン",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🏭",
+    color: "#64748b",
+    title: "工場の巨人",
+    lore: "日本の工業をささえる、大きな機械の巨人。"
+  },
+  {
+    id: "m287",
+    name: "ニッポン・ライナー",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🚄",
+    color: "#e0f2fe",
+    title: "日本を走る光",
+    lore: "日本中をむすぶ、光のように速い電車の竜。"
+  },
+  {
+    id: "m288",
+    name: "ホシゾラ・ナビゲーター",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🛰️",
+    color: "#6366f1",
+    title: "星の案内人",
+    lore: "人工衛星の力で、道案内をする星空の案内人。"
+  },
+  {
+    id: "m289",
+    name: "ホウネン・マザー",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🌾",
+    color: "#f59e0b",
+    title: "豊作の母神",
+    lore: "田んぼと畑に実りをさずける、黄金の母神。"
+  },
+  {
+    id: "m290",
+    name: "ニホン・ショウグン",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🏯",
+    color: "#b91c1c",
+    title: "時代をつなぐ武将",
+    lore: "昔と今の日本をつなぐ、りっぱな武将。"
+  },
+  {
+    id: "m291",
+    name: "ジョウホウ・ミューズ",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "📡",
+    color: "#a78bfa",
+    title: "情報の女神",
+    lore: "新しい情報を世界中に届ける、きらめく女神。"
+  },
+  {
+    id: "m292",
+    name: "サクラ・フブキ",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🌸",
+    color: "#f9a8d4",
+    title: "桜吹雪の姫",
+    lore: "桜の花びらをまとい、日本の春を運ぶ姫。"
+  },
+  {
+    id: "m293",
+    name: "ヒノモト・フジ",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🗻",
+    color: "#3b82f6",
+    title: "霊峰富士の主",
+    lore: "日本一の山の力を宿す、霊峰の主。"
+  },
+  {
+    id: "m294",
+    name: "ライデン・ハツデン",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "⚡",
+    color: "#facc15",
+    title: "雷の発電神",
+    lore: "雷の力を電気に変える、雷神の発電神。"
+  },
+  {
+    id: "m295",
+    name: "ミライ・アースヒーロー",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🌍",
+    color: "#16a34a",
+    title: "未来を守る英雄",
+    lore: "環境を守り、持続可能な未来をめざす、地球のヒーロー。"
+  },
+  {
+    id: "m296",
+    name: "ガクモン・ソウリュウ",
+    rarity: "UR",
+    stars: "★★★★★",
+    icon: "🎓",
+    color: "#fbbf24",
+    title: "学問の竜",
+    lore: "たくさんの知識で、みんなを正しい道へと導く竜。"
+  },
+  {
+    id: "m297",
+    name: "ジュウサン・コトダマ",
+    rarity: "LEGEND",
+    stars: "👑★★★★★",
+    icon: "🌟",
+    color: "#fde047",
+    title: "言霊の最高神",
+    lore: "すべての言葉と知識の源。もっとも会いにくい、言霊の最高神。"
+  },
+  {
+    id: "m298",
+    name: "ニッポン・オウリュウ",
+    rarity: "LEGEND",
+    stars: "👑★★★★★",
+    icon: "🐲",
+    color: "#f59e0b",
+    title: "黄金の日本竜",
+    lore: "日本の山と海をひとまきにする、黄金の大竜。"
+  },
+  {
+    id: "m299",
+    name: "アマノ・ホウオウ",
+    rarity: "LEGEND",
+    stars: "👑★★★★★",
+    icon: "🦚",
+    color: "#a78bfa",
+    title: "空の神鳥",
+    lore: "空から日本を見守りつづける、虹色の神鳥。"
+  },
+  {
+    id: "m300",
+    name: "ウチュウ・ヒメミコ",
+    rarity: "LEGEND",
+    stars: "👑★★★★★",
+    icon: "🌌",
+    color: "#6366f1",
+    title: "宇宙の巫女",
+    lore: "宇宙の星々から日本を見守る、星の巫女。"
   }
 ];
 
